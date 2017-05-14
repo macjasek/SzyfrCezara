@@ -11,13 +11,13 @@ namespace SzyfrCezara
         static void Main(string[] args)
         {
             Console.WriteLine("Podaj słowo do zaszyfrowania");
-            string slowo = Console.ReadLine();
+            string word = Console.ReadLine();
 
-            string slowoSzyfr = "";
+            string wordCipher = "";
             const int SHIFT = 3;
             int ascIndex = 0;
 
-            foreach (char letter in slowo)
+            foreach (char letter in word)
             {
                 ascIndex = (int)letter;
 
@@ -30,10 +30,10 @@ namespace SzyfrCezara
                     ascIndex = (ascIndex < 88) ? ascIndex += SHIFT : ascIndex += SHIFT - 26;
                 }
                 Console.WriteLine(ascIndex);
-                slowoSzyfr += (char)ascIndex;
+                wordCipher += (char)ascIndex;
             }
 
-            Console.WriteLine(slowoSzyfr);
+            Console.WriteLine(wordCipher);
         }
     }
 }
